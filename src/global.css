@@ -1,0 +1,51 @@
+:root {
+    --text-color: white;
+    --background-color: #1c1b1e;
+}
+
+@font-face {
+    font-family: "URW Gothic";
+    src: url("./urw-gothic.ttf");
+}
+
+html,
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "URW Gothic", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-variant: small-caps;
+    color: var(--text-color);
+}
+
+button {
+    font-variant: small-caps;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 2em;
+    padding: 0.5em 1em;
+    border: none;
+    white-space: nowrap;
+}
+
+.button-primary {
+    color: var(--background-color);
+    background-color: var(--text-color);
+}
+
+.button-secondary {
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: solid 2px var(--text-color);
+}
+
+button:hover {
+    cursor: pointer;
+}

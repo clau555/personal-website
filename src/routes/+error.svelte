@@ -1,25 +1,11 @@
-<section>
-    <div id="background-image">
-        <img src="./error.png" alt="error illustration" />
-    </div>
-</section>
+<section />
 
 <style>
     section {
-        position: relative;
-        height: 85vh;
-    }
-
-    #background-image {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
-    }
-
-    img {
-        height: 100%;
-        opacity: 1;
-        animation: image-appear 3s ease-in-out forwards;
+        flex-grow: 1;
+        background-image: url("./error.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: auto 100%;
     }
 </style>

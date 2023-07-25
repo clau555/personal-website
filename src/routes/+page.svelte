@@ -1,51 +1,34 @@
 <script>
-    import Contact from "./Contact.svelte";
-    import Welcome from "./Welcome.svelte";
-
-    let displayContact = false;
-
-    function toggleContact() {
-        displayContact = !displayContact;
-    }
+    import PrimaryButton from "./PrimaryButton.svelte";
 </script>
 
-<section>
-    <div id="background-image">
-        <img src="./home.png" alt="home illustration" />
-    </div>
-
-    {#if !displayContact}
-        <Welcome on:message={toggleContact} />
-    {:else}
-        <Contact on:message={toggleContact} />
-    {/if}
+<section id="welcome">
+    <p class="big-text">Hello, I'm a fullstack developer 👋</p>
+    <PrimaryButton link="projects" text="follow the snake &#8605;" isShaking={true} />
 </section>
 
+<section id="illustration" />
+
 <style>
-    section {
-        position: relative;
-        height: 85vh;
-    }
-
-    #background-image {
-        height: 100%;
+    #welcome {
         display: flex;
-        justify-content: center;
-        overflow: hidden;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
     }
 
-    img {
-        height: 100%;
-        opacity: 1;
-        animation: image-appear 3s ease-in-out forwards;
+    p {
+        font-size: 2rem;
+        margin: 0;
+        text-align: center;
     }
 
-    @keyframes image-appear {
-        from {
-            opacity: 1;
-        }
-        to {
-            opacity: 0.35;
-        }
+    #illustration {
+        background-image: url("./home.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto 100%;
+        height: 25em;
+        z-index: 1;
     }
 </style>

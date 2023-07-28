@@ -1,11 +1,5 @@
-<section />
+<script lang="ts">
+    import Image from "./Image.svelte";
+</script>
 
-<style>
-    section {
-        flex-grow: 1;
-        background-image: url("./error.png");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: auto 100%;
-    }
-</style>
+<Image src="error.png" alt="error snake" height={80} />

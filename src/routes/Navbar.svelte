@@ -19,7 +19,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 1em;
+        gap: 3em;
         padding: 0 10%;
         text-align: center;
     }

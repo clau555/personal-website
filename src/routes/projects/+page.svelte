@@ -22,7 +22,7 @@
         title="Color transfert"
         text="Script transferring colors from one image to another."
         linkTitle="sources"
-        link="https://github.com/clau555/color-transfert"
+        link="https://github.com/clau555/color-transfer"
     />
     <Project
         title="Personal website"

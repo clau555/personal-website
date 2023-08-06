@@ -1,9 +1,15 @@
 <script>
     import "../global.css";
-    import Background from "./Background.svelte";
+    import DashedCurve from "./DashedCurve.svelte";
     import Navbar from "./Navbar.svelte";
+
+    const pageTitle = "Lucas Chardonnet";
 </script>
 
-<Background />
+<svelte:head>
+    <title>{pageTitle}</title>
+</svelte:head>
+
+<DashedCurve />
 <Navbar />
 <slot />

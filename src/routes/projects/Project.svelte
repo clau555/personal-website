@@ -34,18 +34,22 @@
         padding: 1em;
         width: 20em;
         background-color: var(--background-color);
-        opacity: 0.5;
         transition: var(--transition-duration);
     }
 
     #container:hover {
         border-radius: 0.2em;
-        opacity: 1;
+        border-color: var(--accent-color);
+    }
+
+    #container:hover > #link > a,
+    #container:hover > #link > #arrow {
+        color: goldenrod;
     }
 
     #thumbnail-container {
         width: 100%;
-        height: 5em;
+        aspect-ratio: 4/1;
         overflow: hidden;
         border-radius: 1em;
     }

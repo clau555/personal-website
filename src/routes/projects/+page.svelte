@@ -4,30 +4,30 @@
 
 <section>
     <Project
-        image="/home.png"
+        image="/seaside-thumbnail.jpg"
         title="Seaside"
         text="A relaxing animated canvas telling you what time of the day it is."
         linkTitle="go to website"
         link="https://clau555.github.io/seaside/"
     />
     <Project
-        image="/home.png"
+        image="/goodoo-thumbnail.jpg"
         title="Goodoo"
         text="Experimental platformer video game made in Python,
         with procedural generation and physics engine coded from scratch."
-        linkTitle="source"
+        linkTitle="sources"
         link="https://github.com/clau555/goodoo"
     />
     <Project
         title="Color transfert"
         text="Script transferring colors from one image to another."
-        linkTitle="source"
+        linkTitle="sources"
         link="https://github.com/clau555/color-transfert"
     />
     <Project
         title="Personal website"
-        text="You're already there!"
-        linkTitle="source"
+        text="It's here!"
+        linkTitle="sources"
         link="https://github.com/clau555/personal-website"
     />
 </section>

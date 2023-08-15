@@ -1,7 +1,7 @@
 <script>
     import "../global.css";
-    import DashedCurve from "./DashedCurve.svelte";
-    import Navbar from "./Navbar.svelte";
+    import DashedCurve from "../components/DashedCurve.svelte";
+    import Navbar from "../components/Navbar.svelte";
 
     const pageTitle = "Lucas Chardonnet";
 </script>

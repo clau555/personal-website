@@ -1,6 +1,7 @@
 <nav>
     <a href="/">Lucas Chardonnet</a>
     <div>
+        <!-- <p>contact me →</p> -->
         <a id="email" href="mailto:contact@lucas-chardonnet.com">
             <img src="/envelope-regular.svg" alt="email icon" />
         </a>

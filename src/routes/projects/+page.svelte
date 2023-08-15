@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Project from "./Project.svelte";
+    import Project from "../../components/Project.svelte";
 </script>
 
 <section>
@@ -41,6 +41,5 @@
         justify-content: center;
         gap: 2em;
         padding: 2em;
-        z-index: 1;
     }
 </style>

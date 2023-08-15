@@ -11,7 +11,6 @@
 <style>
     #illustration-container {
         text-align: center;
-        z-index: 1;
     }
 
     img {

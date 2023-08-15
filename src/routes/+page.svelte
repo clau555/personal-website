@@ -1,6 +1,6 @@
 <script>
-    import PrimaryButton from "./PrimaryButton.svelte";
-    import Image from "./Image.svelte";
+    import PrimaryButton from "../components/PrimaryButton.svelte";
+    import Image from "../components/Image.svelte";
 </script>
 
 <div id="welcome">

@@ -28,23 +28,16 @@
 
 <style>
     #container {
-        border: solid 1px;
-        border-color: var(--text-color-secondary);
         border-radius: 1em;
         padding: 1em;
         width: 20em;
-        background-color: var(--background-color);
+        color: var(--background-color);
+        background-color: var(--text-color);
         transition: var(--transition-duration);
     }
 
     #container:hover {
         border-radius: 0.2em;
-        border-color: var(--accent-color);
-    }
-
-    #container:hover > #link > a,
-    #container:hover > #link > #arrow {
-        color: goldenrod;
     }
 
     #thumbnail-container {
@@ -52,14 +45,12 @@
         aspect-ratio: 4/1;
         overflow: hidden;
         border-radius: 1em;
+        opacity: 0.9;
+        box-shadow: 0px 0px 10px var(--background-color);
     }
 
     img {
         width: 100%;
-    }
-
-    p {
-        color: var(--text-color-secondary);
     }
 
     #link {
@@ -70,6 +61,10 @@
 
     #arrow {
         transition: var(--transition-duration);
+    }
+
+    a {
+        color: var(--background-color);
     }
 
     a:hover ~ #arrow {

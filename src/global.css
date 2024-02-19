@@ -1,38 +1,54 @@
 :root {
-    --text-color: white;
-    --text-color-secondary: grey;
-    --background-color: #1c1b1e;
-    --accent-color: goldenrod;
+    --text-primary-light: #292C3C;
+    --background-secondary-light: white;
+    --background-primary-light: #f4f2ef;
+    --accent-color-light: #2054cc;
+
+    --text-primary-dark: white;
+    --background-primary-dark: #292C3C;
+    --background-secondary-dark: #383c55;
+    --accent-color-dark: #8CAAEE;
+
     --transition-duration: 0.2s;
+
+    transition: var(--transition-duration) background-color, var(--transition-duration) color;
 }
 
-@font-face {
-    font-family: "URW Gothic";
-    src: url("./urw-gothic.ttf");
+.light-theme {
+    --text-primary: var(--text-primary-light);
+    --background-primary: var(--background-primary-light);
+    --background-secondary: var(--background-secondary-light);
+    --accent-color: var(--accent-color-light);
+}
+
+.dark-theme {
+    --text-primary: var(--text-primary-dark);
+    --background-primary: var(--background-primary-dark);
+    --background-secondary: var(--background-secondary-dark);
+    --accent-color: var(--accent-color-dark);
 }
 
 html,
 body {
-    color: var(--text-color);
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: "URW Gothic", sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    padding: 1rem;
-    height: auto;
-    background-color: var(--background-color);
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text-primary);
 }
 
 a {
+    color: var(--text-primary);
     text-decoration: none;
-    font-weight: bold;
-    font-variant: small-caps;
-    color: var(--text-color);
     transition: var(--transition-duration);
+}
+
+h1 {
+    font-family: "Times New Roman", Times, serif;
+    margin-bottom: 0;
 }

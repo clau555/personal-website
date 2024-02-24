@@ -2,21 +2,25 @@
     import { onDestroy, onMount } from "svelte";
     import { FACTS } from "../snakeFacts";
 
+    function randomInt(max: number): number {
+        return ~~(Math.random() * max);
+    }
+
     const cursor: string = "_";
-    const targetText: string = FACTS[~~(Math.random() * FACTS.length)];
+    const targetText: string = FACTS[randomInt(FACTS.length)];
     const maxTypingSpeed: number = 400;
 
-    let alive: boolean = true;
+    let typing: boolean = true;
     let text: string = cursor;
     let index: number = 0;
     let autoTyper: HTMLElement;
 
     function typeText() {
-        if (!alive) return;
+        if (!typing) return;
         if (index < targetText.length) {
             text = text.slice(0, -1) + targetText[index++];
             text += cursor;
-            const speedVariation = Math.floor(Math.random() * maxTypingSpeed);
+            const speedVariation = randomInt(maxTypingSpeed);
             setTimeout(typeText, maxTypingSpeed - speedVariation);
         } else {
             text = text.slice(0, -1);
@@ -24,12 +28,12 @@
         autoTyper.scrollTop = autoTyper.scrollHeight;
     }
 
-    function setDead() {
-        alive = false;
+    function stopTyping() {
+        typing = false;
     }
 
     onMount(typeText);
-    onDestroy(setDead);
+    onDestroy(stopTyping);
 </script>
 
 <section>
@@ -46,11 +50,11 @@
 
 <style>
     section {
+        height: 100%;
+        color: var(--text-primary);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        height: 100%;
-        color: var(--text-primary);
     }
 
     #autoTyper {
@@ -66,7 +70,7 @@
 
     h1 {
         font-size: 4em;
-        letter-spacing: -0.1em;
+        letter-spacing: -0.05em;
     }
 
     p {

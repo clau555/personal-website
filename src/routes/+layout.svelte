@@ -5,12 +5,11 @@
 
     const pageTitle: string = "Lucas Chardonnet | Software & Digital Art";
 
+    let background: string = "";
     let videoElement: HTMLVideoElement;
-    const backgrounds: string[] = ["jellyfish", "penguins"];
-    let background: string = backgrounds[0];
 
     function changeBackground(event: CustomEvent) {
-        background = backgrounds[event.detail];
+        background = event.detail;
         if (videoElement) videoElement.load();
     }
 </script>
@@ -25,12 +24,14 @@
 </video>
 <div id="gradient" />
 <div id="pattern" />
-<div id="bar">
-    <Navbar />
-    <ThemeSwitcher on:themeChanged={changeBackground} />
-</div>
-<div id="main">
-    <slot />
+<div id="page">
+    <div id="bar">
+        <Navbar />
+        <ThemeSwitcher on:themeChanged={changeBackground} />
+    </div>
+    <div id="main">
+        <slot />
+    </div>
 </div>
 
 <style>
@@ -55,7 +56,7 @@
     }
 
     #pattern {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         background-image: radial-gradient(var(--text-primary) 9%, transparent 9%);
@@ -67,19 +68,23 @@
         z-index: -1;
     }
 
-    div {
+    #page {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #bar {
+        padding-left: 24px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    #bar {
-        padding: 32px;
-    }
-
     #main {
-        height: 100%;
-        padding: 0 32px 32px 32px;
+        padding: 0 24px 24px 24px;
+        overflow-y: scroll;
     }
 
     @media (max-width: 600px) {

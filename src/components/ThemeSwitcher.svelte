@@ -1,30 +1,40 @@
+<script lang="ts" context="module">
+    export const THEMES: string[] = ["dark", "light"];
+
+    function getPreferredTheme(): string {
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? THEMES[0] : THEMES[1];
+    }
+</script>
+
 <script lang="ts">
     import { onMount } from "svelte";
     import { createEventDispatcher } from "svelte";
 
     const dispatch = createEventDispatcher();
-    const themes: string[] = ["dark", "light"];
-    export let currentTheme: string = themes[0];
+    let theme: string = "";
 
-    export function getCurrTheme(): string {
-        return currentTheme;
+    function initTheme() {
+        let savedTheme: string | null = localStorage.getItem("theme") as string | null;
+        theme = savedTheme === null ? getPreferredTheme() : savedTheme;
+        localStorage.setItem("theme", theme);
+        document.documentElement.classList.add(theme + "-theme");
+        dispatch("themeChanged", theme);
     }
 
     export function toggleTheme() {
-        currentTheme = currentTheme === themes[0] ? themes[1] : themes[0];
-        themes.forEach((theme) => {
-            document.documentElement.classList.toggle(theme + "-theme", currentTheme === theme);
+        theme = THEMES[+!THEMES.indexOf(theme)];
+        THEMES.forEach((theme_) => {
+            document.documentElement.classList.toggle(theme_ + "-theme", theme === theme_);
         });
-        dispatch("themeChanged", themes.indexOf(currentTheme));
+        localStorage.setItem("theme", theme);
+        dispatch("themeChanged", theme);
     }
 
-    onMount(() => {
-        document.documentElement.classList.add(currentTheme + "-theme");
-    });
+    onMount(initTheme);
 </script>
 
 <button on:click={toggleTheme}>
-    <img src="./{currentTheme}.svg" alt="theme toggle" />
+    <img src="./{theme}.svg" alt="theme toggle" />
 </button>
 
 <style>
@@ -34,6 +44,7 @@
         padding: 0;
         margin: 0;
         cursor: pointer;
+        padding: 24px;
         transition: var(--transition-duration);
     }
 
@@ -44,5 +55,11 @@
 
     img {
         height: 1em;
+    }
+
+    @media (max-width: 600px) {
+        button:hover {
+            transform: translateX(-0.2em);
+        }
     }
 </style>

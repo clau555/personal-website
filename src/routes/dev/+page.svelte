@@ -1,10 +1,9 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import ProjectCard from "../../components/ProjectCard.svelte";
     import type { Project } from "../../types";
 
-    const rows: number = 2;
-    const columns: number = 3;
-
+    const maxRows: number = 2;
     let projects: Project[] = [];
 
     async function fetchPinnedProjects(): Promise<void> {
@@ -24,13 +23,13 @@
         }
     }
 
-    fetchPinnedProjects();
+    onMount(fetchPinnedProjects);
 </script>
 
 <section>
-    {#each Array(columns) as _, index}
+    {#each Array(projects.length / 2) as _, column}
         <div>
-            {#each projects.slice(index * rows, index * rows + rows) as project}
+            {#each projects.slice(column * maxRows, column * maxRows + maxRows) as project}
                 <ProjectCard {project} />
             {/each}
         </div>
@@ -42,12 +41,11 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: flex-start;
         gap: 8px;
-        width: 100%;
     }
 
     div {
+        flex: 1;
         display: flex;
         flex-direction: column;
         gap: 8px;

@@ -19,6 +19,7 @@
         align-items: center;
         justify-content: center;
         white-space: nowrap;
+        padding: 24px 0;
     }
 
     a:hover {
@@ -28,5 +29,15 @@
 
     .active {
         color: var(--accent-color);
+    }
+
+    @media (max-width: 600px) {
+        a {
+            padding: 0;
+        }
+        
+        a:hover {
+            transform: translateX(0.2em);
+        }
     }
 </style>

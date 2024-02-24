@@ -1,12 +1,14 @@
 :root {
-    --text-primary-light: #292C3C;
+    --text-primary-light: #4C4F69;
+    --text-secondary-light: #86899A;
+    --background-primary-light: #EFF1F5;
     --background-secondary-light: white;
-    --background-primary-light: #f4f2ef;
-    --accent-color-light: #2054cc;
+    --accent-color-light: #1D64F2;
 
-    --text-primary-dark: white;
+    --text-primary-dark: #C6D0F5;
+    --text-secondary-dark: #828AA6;
     --background-primary-dark: #292C3C;
-    --background-secondary-dark: #383c55;
+    --background-secondary-dark: #414559;
     --accent-color-dark: #8CAAEE;
 
     --transition-duration: 0.2s;
@@ -16,6 +18,7 @@
 
 .light-theme {
     --text-primary: var(--text-primary-light);
+    --text-secondary: var(--text-secondary-light);
     --background-primary: var(--background-primary-light);
     --background-secondary: var(--background-secondary-light);
     --accent-color: var(--accent-color-light);
@@ -23,6 +26,7 @@
 
 .dark-theme {
     --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
     --background-primary: var(--background-primary-dark);
     --background-secondary: var(--background-secondary-dark);
     --accent-color: var(--accent-color-dark);
@@ -36,10 +40,9 @@ body {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     font-family: 'Courier New', Courier, monospace;
     color: var(--text-primary);
+    background-color: var(--background-primary-dark);
 }
 
 a {
@@ -49,6 +52,9 @@ a {
 }
 
 h1 {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     margin-bottom: 0;
 }

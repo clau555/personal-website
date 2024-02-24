@@ -4,22 +4,19 @@
     import NavItem from "../components/NavItem.svelte";
 
     const items: string[] = ["home", "dev", "art", "contact"];
-    let selected = writable("");
+    let selectedItem = writable("");
 
     function handleItemClick(item: string) {
-        selected.set(item);
+        selectedItem.set(item);
     }
 
-    onMount(() => {
-        let currentRoute: string = window.location.pathname.split("/")[1];
-        currentRoute = currentRoute === "" ? items[0] : currentRoute;
+    function selectItem() {
+        let endPoint: string = window.location.pathname.split("/")[1];
+        if (endPoint.length === 0) endPoint = items[0];
+        if (items.includes(endPoint)) selectedItem.set(endPoint);
+    }
 
-        if (items.includes(currentRoute)) {
-            selected.set(currentRoute);
-        } else {
-            selected.set("");
-        }
-    });
+    onMount(selectItem);
 </script>
 
 <nav>
@@ -27,7 +24,7 @@
         <NavItem
             route="/{item !== items[0] ? item : ''}"
             label={item}
-            selected={$selected === item}
+            selected={$selectedItem === item}
             onClick={handleItemClick}
         />
     {/each}
@@ -39,13 +36,14 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
-        gap: 5%;
-        width: 100%;
+        gap: 3em;
     }
 
     @media (max-width: 600px) {
         nav {
             flex-direction: column;
+            gap: 0.5em;
+            padding: 24px 0;
         }
     }
 </style>

@@ -1,5 +1,15 @@
+<script lang="ts" context="module">
+    export interface Project {
+        name: string;
+        description: string;
+        html_url: string;
+        homepage: string;
+        language: string;
+        stargazers_count: number;
+    }
+</script>
+
 <script lang="ts">
-    import type { Project } from "../types";
     export let project: Project;
 </script>
 
@@ -11,13 +21,13 @@
     {#if project.description}
         <p>{project.description}</p>
     {/if}
-    <p id="language">{project.language.name}</p>
+    <p id="language">{project.language}</p>
     <p>
-        {#if project.demo}
-            <a href={project.demo}>website</a>
+        {#if project.homepage}
+            <a href={project.homepage}>website</a>
             <br />
         {/if}
-        <a href={project.repo}>source</a>
+        <a href={project.html_url}>source</a>
     </p>
 </div>
 

@@ -1,17 +1,14 @@
-<script lang="ts" context="module">
-    export const THEMES: string[] = ["dark", "light"];
-
-    function getPreferredTheme(): string {
-        return window.matchMedia("(prefers-color-scheme: dark)").matches ? THEMES[0] : THEMES[1];
-    }
-</script>
-
 <script lang="ts">
     import { onMount } from "svelte";
     import { createEventDispatcher } from "svelte";
 
+    const THEMES: string[] = ["dark", "light"];
     const dispatch = createEventDispatcher();
     let theme: string = "";
+
+    export function getPreferredTheme(): string {
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? THEMES[0] : THEMES[1];
+    }
 
     function initTheme() {
         let savedTheme: string | null = localStorage.getItem("theme") as string | null;
@@ -21,7 +18,7 @@
         dispatch("themeChanged", theme);
     }
 
-    export function toggleTheme() {
+    function toggleTheme() {
         theme = THEMES[+!THEMES.indexOf(theme)];
         THEMES.forEach((theme_) => {
             document.documentElement.classList.toggle(theme_ + "-theme", theme === theme_);

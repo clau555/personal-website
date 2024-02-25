@@ -18,10 +18,12 @@
     <title>{pageTitle}</title>
 </svelte:head>
 
-<video autoplay muted loop bind:this={videoElement}>
-    <source src="{background}.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-</video>
+{#if background !== ""}
+    <video autoplay muted loop bind:this={videoElement}>
+        <source src="{background}.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+{/if}
 <div id="gradient" />
 <div id="pattern" />
 <div id="page">

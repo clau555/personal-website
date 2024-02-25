@@ -42,7 +42,18 @@ body {
 body {
     font-family: 'Courier New', Courier, monospace;
     color: var(--text-primary);
-    background-color: var(--background-primary-dark);
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) transparent;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+    background-color: transparent;
 }
 
 a {
@@ -58,3 +69,4 @@ h1 {
     font-style: normal;
     margin-bottom: 0;
 }
+

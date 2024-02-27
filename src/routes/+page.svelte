@@ -50,7 +50,7 @@
 
 <style>
     section {
-        height: 100%;
+        min-height: 0; /* https://stackoverflow.com/a/14964944 */
         color: var(--text-primary);
         display: flex;
         flex-direction: column;

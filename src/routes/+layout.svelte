@@ -87,6 +87,7 @@
     #main {
         padding: 0 24px 24px 24px;
         overflow-y: scroll;
+        overflow-x: hidden;
     }
 
     @media (max-width: 600px) {

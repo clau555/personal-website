@@ -8,7 +8,7 @@
 
     const cursor: string = "_";
     const targetText: string = FACTS[randomInt(FACTS.length)];
-    const maxTypingSpeed: number = 400;
+    const maxTypingDelay: number = 300;
 
     let typing: boolean = true;
     let text: string = cursor;
@@ -20,8 +20,8 @@
         if (index < targetText.length) {
             text = text.slice(0, -1) + targetText[index++];
             text += cursor;
-            const speedVariation = randomInt(maxTypingSpeed);
-            setTimeout(typeText, maxTypingSpeed - speedVariation);
+            const delayVariation = randomInt(maxTypingDelay);
+            setTimeout(typeText, maxTypingDelay - delayVariation);
         } else {
             text = text.slice(0, -1);
         }
@@ -41,9 +41,8 @@
     <div>
         <h1>Lucas Chardonnet</h1>
         <p>
-            Hello,<br />
-            I'm a software engineer<br />
-            and a digital artist.
+            <span>Software Engineering</span><br />
+            & <span>Digital Art</span>
         </p>
     </div>
 </section>
@@ -66,6 +65,11 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        padding: 1em;
+        border-radius: 8px;
+        background-color: var(--background-secondary-transparent);
+        backdrop-filter: blur(8px);
+        border: solid 1px var(--background-secondary);
     }
 
     h1 {
@@ -75,5 +79,11 @@
 
     p {
         margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 3.5em;
+        }
     }
 </style>

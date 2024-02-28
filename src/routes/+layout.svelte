@@ -66,8 +66,18 @@
         background-position: 0%;
         height: 100%;
         width: 100%;
-        opacity: 0.1;
+        opacity: 0.5;
         z-index: -1;
+        -webkit-mask-image: radial-gradient(
+            120vh circle at 50% 50%,
+            var(--background-secondary-transparent),
+            transparent
+        );
+        mask-image: radial-gradient(
+            120vh circle at 50% 50%,
+            var(--background-secondary-transparent),
+            transparent
+        );
     }
 
     #page {

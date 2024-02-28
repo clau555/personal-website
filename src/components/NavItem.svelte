@@ -35,7 +35,7 @@
         a {
             padding: 0;
         }
-        
+
         a:hover {
             transform: translateX(0.2em);
         }

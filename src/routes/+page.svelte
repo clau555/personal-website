@@ -66,7 +66,7 @@
         flex-direction: column;
         justify-content: flex-end;
         padding: 1em;
-        border-radius: 8px;
+        border-radius: 2px;
         background-color: var(--background-secondary-transparent);
         backdrop-filter: blur(8px);
         border: solid 1px var(--background-secondary);
@@ -74,7 +74,6 @@
 
     h1 {
         font-size: 4em;
-        letter-spacing: -0.05em;
     }
 
     p {

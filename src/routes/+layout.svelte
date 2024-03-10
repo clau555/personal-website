@@ -2,6 +2,7 @@
     import "../global.css";
     import Navbar from "../components/Navbar.svelte";
     import ThemeSwitcher from "../components/ThemeSwitcher.svelte";
+    import Pattern from "../components/Pattern.svelte";
 
     const pageTitle: string = "Lucas Chardonnet | Software & Digital Art";
 
@@ -25,7 +26,7 @@
     </video>
 {/if}
 <div id="gradient" />
-<div id="pattern" />
+<Pattern />
 <div id="page">
     <div id="bar">
         <Navbar />
@@ -55,29 +56,6 @@
         height: 100%;
         background: linear-gradient(to right, var(--background-primary) 30%, transparent);
         z-index: -2;
-    }
-
-    #pattern {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-image: radial-gradient(var(--text-primary) 9%, transparent 9%);
-        background-size: 4vmin 4vmin;
-        background-position: 0%;
-        height: 100%;
-        width: 100%;
-        opacity: 0.5;
-        z-index: -1;
-        -webkit-mask-image: radial-gradient(
-            120vh circle at 50% 50%,
-            var(--background-secondary-transparent),
-            transparent
-        );
-        mask-image: radial-gradient(
-            120vh circle at 50% 50%,
-            var(--background-secondary-transparent),
-            transparent
-        );
     }
 
     #page {

@@ -1,16 +1,18 @@
 :root {
-    --text-primary-light: #4C4F69;
-    --text-secondary-light: #86899A;
-    --background-primary-light: #EFF1F5;
-    --background-secondary-light: #CCD0DA;
-    --background-secondary-light-transparent: #CCD0DA66;
-    --accent-color-light: #7287fd;
+    --text-primary-light: #3C3836;
+    --text-secondary-light: #928374;
+    --background-primary-light: #F9F5D7;
+    --background-secondary-light: #EBDBB2;
+    --background-secondary-light-transparent: #EBDBB266;
+    --pattern-light: #F9F5D7;
+    --accent-color-light: #79740E;
 
     --text-primary-dark: #C6D0F5;
     --text-secondary-dark: #828AA6;
     --background-primary-dark: #303446;
     --background-secondary-dark: #414559;
     --background-secondary-dark-transparent: #41455966;
+    --pattern-dark: #C6D0F5;
     --accent-color-dark: #8CAAEE;
 
     --transition-duration: 0.2s;
@@ -23,6 +25,7 @@
     --background-primary: var(--background-primary-light);
     --background-secondary: var(--background-secondary-light);
     --background-secondary-transparent: var(--background-secondary-light-transparent);
+    --pattern: var(--pattern-light);
     --accent-color: var(--accent-color-light);
 }
 
@@ -32,6 +35,7 @@
     --background-primary: var(--background-primary-dark);
     --background-secondary: var(--background-secondary-dark);
     --background-secondary-transparent: var(--background-secondary-dark-transparent);
+    --pattern: var(--pattern-dark);
     --accent-color: var(--accent-color-dark);
 }
 
@@ -66,15 +70,6 @@ a {
     color: var(--text-primary);
     text-decoration: none;
     transition: var(--transition-duration);
-}
-
-h1 {
-    font-family: 'Pixelify Sans', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    margin-bottom: 0;
-    letter-spacing: -0.05em;
 }
 
 .highlighted-tile {

@@ -2,9 +2,9 @@
     import { onMount } from "svelte";
 
     const TILE_SIZE: number = 24;
-    const TILE_GAP: number = 1;
+    const TILE_GAP: number = 2;
     const ANIMATION_CLASS: string = "highlighted-tile";
-    const MAX_WAVE_ITERATIONS = 3;
+    const MAX_WAVE_ITERATIONS: number = 3;
 
     let animating: boolean = true;
     let columns: number = 0;
@@ -127,7 +127,7 @@
     .tile {
         width: var(--tile-size) px;
         height: var(--tile-size) px;
-        background-color: var(--text-primary);
+        background-color: var(--pattern);
         border: none;
         border-radius: 2px;
         opacity: 0.025;

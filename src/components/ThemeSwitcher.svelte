@@ -1,12 +1,11 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { createEventDispatcher } from "svelte";
+    import { globalTheme } from "../store.js";
 
     const THEMES: string[] = ["dark", "light"];
-    const dispatch = createEventDispatcher();
     let theme: string = "";
 
-    export function getPreferredTheme(): string {
+    function getPreferredTheme(): string {
         return window.matchMedia("(prefers-color-scheme: dark)").matches ? THEMES[0] : THEMES[1];
     }
 
@@ -15,7 +14,7 @@
         theme = savedTheme === null ? getPreferredTheme() : savedTheme;
         localStorage.setItem("theme", theme);
         document.documentElement.classList.add(theme + "-theme");
-        dispatch("themeChanged", theme);
+        globalTheme.set(theme);
     }
 
     function toggleTheme() {
@@ -24,7 +23,7 @@
             document.documentElement.classList.toggle(theme_ + "-theme", theme === theme_);
         });
         localStorage.setItem("theme", theme);
-        dispatch("themeChanged", theme);
+        globalTheme.set(theme);
     }
 
     onMount(initTheme);
@@ -41,22 +40,19 @@
         padding: 0;
         margin: 0;
         cursor: pointer;
-        padding: 24px;
-        transition: var(--transition-duration);
-    }
-
-    button:hover {
-        transform: translateY(0.2em);
+        margin-left: auto;
+        margin-right: 0;
         transition: var(--transition-duration);
     }
 
     img {
         height: 1em;
+        transition: var(--transition-duration);
     }
 
     @media (max-width: 600px) {
-        button:hover {
-            transform: translateX(-0.2em);
+        button {
+            margin: 0;
         }
     }
 </style>

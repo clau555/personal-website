@@ -3,8 +3,6 @@
     import Pattern from "../components/Pattern.svelte";
     import { globalTheme } from "../store.js";
 
-    const pageTitle: string = "Lucas Chardonnet | Software & Digital Art";
-
     let background: string = "";
     let videoElement: HTMLVideoElement;
 
@@ -15,7 +13,7 @@
 </script>
 
 <svelte:head>
-    <title>{pageTitle}</title>
+    <title>Lucas Chardonnet | Software Engineering & Digital Art</title>
 </svelte:head>
 
 {#if background !== ""}
@@ -30,10 +28,8 @@
 <style>
     img {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         z-index: -3;
     }
@@ -58,8 +54,13 @@
     }
 
     @media (max-width: 600px) {
+        img {
+            left: 0;
+            width: auto;
+        }
+
         #gradient {
-            background: linear-gradient(to top, var(--background-primary) 25%, transparent);
+            background: linear-gradient(to top, var(--background-primary) 50%, transparent);
         }
     }
 </style>

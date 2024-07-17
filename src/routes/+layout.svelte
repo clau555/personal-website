@@ -26,8 +26,8 @@
 
     #main {
         padding: 32px;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         box-sizing: border-box;
         overflow-y: scroll;
         overflow-x: hidden;

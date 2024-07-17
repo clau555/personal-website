@@ -33,4 +33,10 @@
     div {
         display: flex;
     }
+
+    @media (orientation: portrait) {
+        section {
+            max-width: 100%;
+        }
+    }
 </style>

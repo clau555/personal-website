@@ -50,7 +50,7 @@
         transition: var(--transition-duration);
     }
 
-    @media (max-width: 600px) {
+    @media (orientation: portrait) {
         button {
             margin: 0;
         }

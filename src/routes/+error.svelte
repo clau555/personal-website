@@ -1,4 +1,9 @@
+<script lang="ts">
+    import ThemeSwitcher from "../components/ThemeSwitcher.svelte";
+</script>
+
 <section>
+    <ThemeSwitcher />
     <pre>
         ~+
 

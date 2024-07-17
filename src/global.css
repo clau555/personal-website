@@ -6,7 +6,7 @@
     --background-secondary-light-transparent: #EBDBB266;
     --pattern-light: #3C3836;
     --accent-color-light: #79740E;
-
+    --bg-light: url("/light.jpg");
     --text-primary-dark: #C6D0F5;
     --text-secondary-dark: #828AA6;
     --background-primary-dark: #303446;
@@ -14,7 +14,7 @@
     --background-secondary-dark-transparent: #41455966;
     --pattern-dark: #C6D0F5;
     --accent-color-dark: #8CAAEE;
-
+    --bg-dark: url("/dark.jpg");
     --transition-duration: 0.2s;
     transition: var(--transition-duration) background-color, var(--transition-duration) color;
 }
@@ -27,6 +27,7 @@
     --background-secondary-transparent: var(--background-secondary-light-transparent);
     --pattern: var(--pattern-light);
     --accent-color: var(--accent-color-light);
+    --bg: var(--bg-light);
 }
 
 .dark-theme {
@@ -37,6 +38,7 @@
     --background-secondary-transparent: var(--background-secondary-dark-transparent);
     --pattern: var(--pattern-dark);
     --accent-color: var(--accent-color-dark);
+    --bg: var(--bg-dark);
 }
 
 html,
@@ -51,6 +53,9 @@ body {
     color: var(--text-primary);
     scrollbar-width: thin;
     scrollbar-color: var(--accent-color) transparent;
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: center;
 }
 
 body::-webkit-scrollbar {
@@ -74,4 +79,10 @@ a {
 
 .highlighted-tile {
     opacity: 0.15 !important;
+}
+
+@media (orientation: portrait) {
+    body {
+        background-position: left;
+    }
 }

@@ -12,7 +12,7 @@
         gap: 2em;
     }
 
-    @media (max-width: 600px) {
+    @media (orientation: portrait) {
         nav {
             flex-direction: column;
             gap: 0.25em;

@@ -1,24 +1,12 @@
 <script lang="ts">
     import "../global.css";
     import Pattern from "../components/Pattern.svelte";
-    import { globalTheme } from "../store.js";
-
-    let background: string = "";
-    let videoElement: HTMLVideoElement;
-
-    globalTheme.subscribe((theme) => {
-        background = theme;
-        if (videoElement) videoElement.load();
-    });
 </script>
 
 <svelte:head>
     <title>Lucas Chardonnet | Software Engineering & Digital Art</title>
 </svelte:head>
 
-{#if background !== ""}
-    <img src="{background}.jpg" alt="background art" />
-{/if}
 <div id="gradient" />
 <Pattern />
 <div id="main">
@@ -26,14 +14,6 @@
 </div>
 
 <style>
-    img {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -3;
-    }
-
     #gradient {
         position: fixed;
         top: 0;
@@ -53,12 +33,7 @@
         overflow-x: hidden;
     }
 
-    @media (max-width: 600px) {
-        img {
-            left: 0;
-            width: auto;
-        }
-
+    @media (orientation: portrait) {
         #gradient {
             background: linear-gradient(to top, var(--background-primary) 50%, transparent);
         }

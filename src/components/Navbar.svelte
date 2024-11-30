@@ -2,11 +2,21 @@
     import LinkItem from "./LinkItem.svelte";
     import ThemeSwitcher from "./ThemeSwitcher.svelte";
 
-    const links: { label: string; link: string }[] = [
+    const pages: { label: string; link: string }[] = [
         { label: "/home", link: "/" },
         { label: "/dev", link: "" },
         { label: "/art", link: "" },
         { label: "/blog", link: "" }
+    ];
+
+    const socials: { label: string; link: string; isHighlighted: boolean }[] = [
+        { label: "email", link: "mailto:lucas.chardonnet1@gmail.com", isHighlighted: true },
+        { label: "github", link: "https://github.com/clau555", isHighlighted: false },
+        {
+            label: "linkedin",
+            link: "https://www.linkedin.com/in/lucas-chardonnet/",
+            isHighlighted: false
+        }
     ];
 
     let pannelOpened: boolean = false;
@@ -18,15 +28,15 @@
 
 <nav>
     <div class="desktop">
-        {#each links as { label, link }}
+        {#each pages as { label, link }}
             <LinkItem {label} {link} />
         {/each}
     </div>
     <div class="desktop signature">L.C.</div>
     <div class="desktop">
-        <LinkItem label="email" link="mailto:lucas.chardonnet1@gmail.com" isHighlighted />
-        <LinkItem label="github" link="https://github.com/clau555" />
-        <LinkItem label="linkedin" link="https://www.linkedin.com/in/lucas-chardonnet/" />
+        {#each socials as { label, link, isHighlighted }}
+            <LinkItem {label} {link} {isHighlighted} />
+        {/each}
         <ThemeSwitcher />
     </div>
     <div class="mobile menu">
@@ -49,14 +59,14 @@
 {#if pannelOpened}
     <div class="mobile panel">
         <div>
-            {#each links as { label, link }}
+            {#each pages as { label, link }}
                 <LinkItem {label} {link} />
             {/each}
         </div>
         <div>
-            <LinkItem label="email" link="mailto:lucas.chardonnet1@gmail.com" />
-            <LinkItem label="github" link="https://github.com/clau555" />
-            <LinkItem label="linkedin" link="https://www.linkedin.com/in/lucas-chardonnet/" />
+            {#each socials as { label, link, isHighlighted }}
+                <LinkItem {label} {link} {isHighlighted} />
+            {/each}
         </div>
         <div>
             <ThemeSwitcher />
@@ -75,7 +85,7 @@
         border-bottom: solid 1px var(--background-secondary);
         background-color: var(--background-primary);
         backdrop-filter: blur(8px);
-        padding: 1em 32px;
+        padding: 0.5em 1em;
     }
 
     div {

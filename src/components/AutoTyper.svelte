@@ -8,7 +8,7 @@
 
     const cursor: string = "_";
     const targetText: string = FACTS[randomInt(FACTS.length)];
-    const maxTypingDelay: number = 200;
+    const maxTypingDelay: number = 150;
 
     let typing: boolean = true;
     let text: string = cursor;
@@ -55,7 +55,7 @@
         height: 16em;
         margin: 0;
         font-size: 1rem;
-        color: var(--accent-color);
+        color: var(--accent);
         padding: 1em;
         border: solid 1px var(--background-secondary);
         border-radius: 2px;

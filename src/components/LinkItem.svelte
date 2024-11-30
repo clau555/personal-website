@@ -1,10 +1,23 @@
 <script lang="ts">
+    import { page } from "$app/stores";
+
     export let label: string;
     export let link: string;
     export let isHighlighted: boolean = false;
 </script>
 
-<a class:highlighted={isHighlighted} class:disabled={link === ""} href={link}>{label} </a>
+{#if link === ""}
+    <div>
+        <span class="disabled">
+            {label}
+        </span>
+        🚧
+    </div>
+{:else}
+    <a class:highlighted={isHighlighted} href={link} aria-current={$page.url.pathname === link}>
+        {label}
+    </a>
+{/if}
 
 <style>
     a {
@@ -18,13 +31,11 @@
     }
 
     .highlighted {
-        border: 1px solid var(--text-secondary);
-        border-radius: 2px;
-        backdrop-filter: blur(8px);
-        padding: 1em;
+        color: var(--accent);
     }
 
     .disabled {
+        color: var(--text-secondary);
         pointer-events: none;
         text-decoration: line-through;
     }

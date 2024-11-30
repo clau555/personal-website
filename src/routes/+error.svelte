@@ -1,9 +1,4 @@
-<script lang="ts">
-    import ThemeSwitcher from "../components/ThemeSwitcher.svelte";
-</script>
-
 <section>
-    <ThemeSwitcher />
     <pre>
         ~+
 
@@ -21,7 +16,8 @@
 </section>
 
 <style>
-    section {
+    pre,
+    h1 {
         font-weight: bold;
     }
 </style>

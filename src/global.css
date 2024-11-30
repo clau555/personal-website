@@ -1,21 +1,21 @@
 :root {
-    --text-primary-light: #3C3836;
+    /* light theme : gruvbox */
+    --text-primary-light: #3c3836;
     --text-secondary-light: #928374;
-    --background-primary-light: #F9F5D7;
-    --background-secondary-light: #EBDBB2;
-    --background-secondary-light-transparent: #EBDBB266;
-    --pattern-light: #3C3836;
-    --accent-color-light: #79740E;
+    --background-primary-light: #f9f5d7;
+    --background-secondary-light: #ebdbb2;
+    --background-secondary-light-transparent: #ebdbb266;
+    --pattern-light: #3c3836;
+    --accent-light: #79740e;
     --bg-light: url("/light.jpg");
-  
-    --text-primary-dark: #C6D0F5;
-    --text-secondary-dark: #828AA6;
+    /* dark theme : catppuccin frappe */
+    --text-primary-dark: #c6d0f5;
+    --text-secondary-dark: #828aa6;
     --background-primary-dark: #303446;
     --background-secondary-dark: #414559;
     --background-secondary-dark-transparent: #41455966;
-    --pattern-dark: #C6D0F5;
-    --accent-color-dark: #8CAAEE;
-
+    --pattern-dark: #c6d0f5;
+    --accent-dark: #8caaee;
     --bg-dark: url("/dark.jpg");
     --transition-duration: 0.2s;
     transition: var(--transition-duration) background-color, var(--transition-duration) color;
@@ -28,7 +28,7 @@
     --background-secondary: var(--background-secondary-light);
     --background-secondary-transparent: var(--background-secondary-light-transparent);
     --pattern: var(--pattern-light);
-    --accent-color: var(--accent-color-light);
+    --accent: var(--accent-light);
     --bg: var(--bg-light);
 }
 
@@ -39,7 +39,7 @@
     --background-secondary: var(--background-secondary-dark);
     --background-secondary-transparent: var(--background-secondary-dark-transparent);
     --pattern: var(--pattern-dark);
-    --accent-color: var(--accent-color-dark);
+    --accent: var(--accent-dark);
     --bg: var(--bg-dark);
 }
 
@@ -51,13 +51,11 @@ body {
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     color: var(--text-primary);
     scrollbar-width: thin;
-    scrollbar-color: var(--accent-color) transparent;
-    background-image: var(--bg);
-    background-size: cover;
-    background-position: center;
+    scrollbar-color: var(--accent) transparent;
+    background-color: var(--background-primary);
 }
 
 body::-webkit-scrollbar {
@@ -65,7 +63,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: var(--accent-color);
+    background-color: var(--accent);
     border-radius: 10px;
 }
 

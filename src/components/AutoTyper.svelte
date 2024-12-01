@@ -15,7 +15,7 @@
     let index: number = 0;
     let autoTyper: HTMLElement;
 
-    function typeText() {
+    function typeText(): void {
         if (!typing) return;
 
         let lastText: string = text.slice(0, -1);
@@ -36,10 +36,9 @@
             text = lastText;
         }
         autoTyper.scrollTop = autoTyper.scrollHeight;
-        autoTyper.innerHTML = text;
     }
 
-    function stopTyping() {
+    function stopTyping(): void {
         typing = false;
     }
 
